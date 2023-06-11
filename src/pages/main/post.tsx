@@ -81,6 +81,7 @@ export const Post = (props: Props) => {
 
   useEffect(() => {
     getLikes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { useEffect, useState } from "react";
-import { Post } from "./post";
+import { Post as IPost } from "./post";
 
 export interface Post {
   id: string;
@@ -24,12 +24,14 @@ export const Main = () => {
 
   useEffect(() => {
     getPosts();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
       {postsList?.map((post, id) => (
-        <Post post={post} key={id} />
+        <IPost post={post} key={id} />
       ))}
     </div>
   );
