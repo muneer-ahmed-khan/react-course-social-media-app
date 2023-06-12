@@ -29,7 +29,8 @@ export const Main = () => {
   }, []);
 
   return (
-    <div>
+    <div className="posts">
+      <div className="all-posts">All Posts</div>
       {postsList?.map((post, id) => (
         <IPost post={post} key={id} />
       ))}
